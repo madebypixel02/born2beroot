@@ -2,7 +2,7 @@
 
 echo "#Architecture: $(uname -a)"
 echo "#CPU physical: $(lscpu | awk ' NR==5 {print $2}')"
-echo "#vCPU : $(lscpu | awk ' NR==5 {print $2}')"
+echo "#vCPU : $(lscpu | awk ' NR==9 {print $2}')"
 echo "#Memory Usage: $(free --mega | awk 'NR==2 {printf "%s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }')"
 echo "#Disk Usage: $(df -h | awk 'NR==4 {printf "%.1f/%.1fGB (%s)\n", $3 / 1024,$2,$5}')"
 echo "#CPU Load: $(top -bn 1 | awk 'NR==3 {printf "%.2f%%\n", $4 + $2}')"
